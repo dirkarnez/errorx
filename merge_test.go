@@ -26,6 +26,16 @@ func TestMergeErrorNil(t *testing.T) {
 	}
 }
 
+func TestMergeErrorNilArray(t *testing.T) {
+	fmt.Println("TestMergeErrorNilArray")
+
+	errorMerged := MergeError(nil...)
+
+	if errorMerged != nil {
+		t.Errorf("Should not return error")
+	}
+}
+
 func TestMergeErrorSingleError(t *testing.T) {
 	fmt.Println("TestMergeErrorSingleError")
 
