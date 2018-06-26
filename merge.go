@@ -6,7 +6,13 @@ import (
 )
 
 func MergeError(errList ...error) error {
-	if len(errList) < 1 {
+	if errList == nil {
+		return nil
+	}
+
+	length := len(errList)
+
+	if length < 1 || (length == 1 && errList[0] == nil) {
 		return nil
 	}
 
